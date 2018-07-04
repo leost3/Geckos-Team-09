@@ -42,19 +42,17 @@ const img = [
 ]
 
 //This function will generate date  Date/Hour/Minute/Second from the user computer at each 1s (1000ms) and change the background image on the exact time that will be set
-setInterval(() => { 
+window.onload = setInterval(() => { 
     let currentDate = new Date();
     let currentHour = currentDate.getHours();
     let currentSecond = currentDate.getSeconds();
     let currentMinute  = currentDate.getMinutes();
-    // console.log(currentHour);
-    // console.log(currentMinute);
-    // console.log(currentSecond);
-    if (currentHour === 10 && currentMinute === 41 && currentSecond === 30 ) {//checks if it's the exact time to change the background image
+    console.log(currentHour + `:` + currentMinute + `:`+  currentSecond);
+    if (currentHour === 17 && currentMinute === 36 && currentSecond === 0 ) {//checks if it's the exact time to change the background image
         let randomNum = Math.floor(Math.random() * 6); //generates a random number from 0 to 5 (number of images on the object)
-        //console.log("random Number: ", randomNum);
+        console.log("random Number: ", randomNum);
         let selectedImg = img[randomNum].image; //gets a random image from the object and assign to a variable
-        let imgUrl = "url('" + selectedImg + "')"; // changes the format 
+        let imgUrl = "url('" + selectedImg + "')"; // changes the format
         document.body.style.backgroundImage = imgUrl; // changes the background image
     }
 },1000);
