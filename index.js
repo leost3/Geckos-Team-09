@@ -55,4 +55,4 @@ window.onload = setInterval(() => {
         let imgUrl = "url('" + selectedImg + "')"; // changes the format
         document.body.style.backgroundImage = imgUrl; // changes the background image
     }
-},1000);
+},500);
